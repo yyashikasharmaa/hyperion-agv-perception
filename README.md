@@ -16,7 +16,17 @@ The project progressed from a two-sensor development setup to deployment and val
 
 ## Deployment & Test Evidence
 
-The project report documents RViz-based point-cloud fusion and DBSCAN validation, Nav2/STVL integration, nearest-obstacle visualization, and six-LiDAR physical deployment. Real screenshots will be added here only from sanitized report/test captures; no generated mockups are used as deployment evidence.
+These are sanitized captures from the real development and BOPT deployment sessions documented in the project report.
+
+| Six-LiDAR fused cloud | Safety-zone visualization |
+|---|---|
+| ![Six-LiDAR fused cloud](docs/screenshots/rviz_fused_cloud.jpg) | ![Safety-zone visualization](docs/screenshots/safety_zone_visualization.svg) |
+
+| STVL / Nav2 integration | Nearest-obstacle view |
+|---|---|
+| ![STVL and Nav2 integration](docs/screenshots/stvl_nav2_integration.svg) | ![Nearest obstacle](docs/screenshots/nearest_obstacle.jpg) |
+
+The deployed fusion node was observed publishing from all six LiDARs at approximately **20 Hz**, with roughly **2,050–2,150 points per merged-cloud message**.
 
 ## System Architecture
 
@@ -455,21 +465,9 @@ The main engineering value of the project was not simply producing a merged poin
 
 ## Screenshots & Demo
 
-Real deployment/test screenshots will be stored under:
+The evidence above is extracted from the real project report and sanitized for public use. It shows the fused six-LiDAR point cloud, safety-zone visualization, STVL/Nav2 integration, and nearest-obstacle deployment view.
 
-```text
-docs/screenshots/
-```
-
-Planned evidence set:
-
-- `rviz_fused_cloud.png` — six-LiDAR fused point cloud in RViz
-- `rviz_dbscan_clusters.png` — DBSCAN obstacle-cluster visualization
-- `stvl_costmap.png` — STVL/local costmap validation
-- `nearest_obstacle.png` — nearest-obstacle visualization
-- `deployment_bopt.png` — physical AGV deployment
-
-> Only sanitized screenshots from the real project/report should be used here. Internal IP addresses, hostnames, usernames, credentials, and company-sensitive information must be removed before publication.
+> Internal IP addresses, hostnames, usernames, credentials, and company-sensitive terminal details are intentionally excluded from the public evidence set.
 
 ## Dependencies
 

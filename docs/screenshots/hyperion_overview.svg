@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="620" viewBox="0 0 1400 620">
+<rect width="1400" height="620" fill="#0d1117"/>
+<rect x="24" y="24" width="1352" height="572" rx="22" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="60" y="86" fill="#f0f6fc" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700">HYPERION</text>
+<text x="60" y="125" fill="#c9d1d9" font-family="Arial, Helvetica, sans-serif" font-size="23">Multi-LiDAR Perception &amp; Safety System for an Autonomous AGV</text>
+<text x="60" y="164" fill="#8b949e" font-family="Arial, Helvetica, sans-serif" font-size="17">Six-LiDAR fusion · TF2 alignment · DBSCAN clustering · STVL/Nav2 integration · physical deployment</text>
+
+<g font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">
+<rect x="60" y="190" width="82" height="32" rx="7" fill="#1f6feb"/><text x="78" y="212" fill="white">ROS 2</text>
+<rect x="152" y="190" width="88" height="32" rx="7" fill="#238636"/><text x="168" y="212" fill="white">Python</text>
+<rect x="250" y="190" width="70" height="32" rx="7" fill="#8957e5"/><text x="267" y="212" fill="white">TF2</text>
+<rect x="330" y="190" width="94" height="32" rx="7" fill="#d29922"/><text x="344" y="212" fill="white">DBSCAN</text>
+<rect x="434" y="190" width="76" height="32" rx="7" fill="#a371f7"/><text x="451" y="212" fill="white">Nav2</text>
+<rect x="520" y="190" width="74" height="32" rx="7" fill="#f85149"/><text x="539" y="212" fill="white">STVL</text>
+</g>
+
+<text x="60" y="274" fill="#f0f6fc" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">System Flow</text>
+
+<g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+<rect x="60" y="302" width="190" height="92" rx="14" fill="#21262d" stroke="#58a6ff" stroke-width="2"/>
+<text x="155" y="337" fill="#58a6ff" font-size="18" font-weight="700">6× D500 LiDARs</text>
+<text x="155" y="365" fill="#c9d1d9" font-size="14">LaserScan inputs</text>
+
+<path d="M250 348 H305" stroke="#8b949e" stroke-width="3"/><polygon points="305,348 293,341 293,355" fill="#8b949e"/>
+
+<rect x="305" y="302" width="190" height="92" rx="14" fill="#21262d" stroke="#a371f7" stroke-width="2"/>
+<text x="400" y="337" fill="#a371f7" font-size="18" font-weight="700">TF2 Alignment</text>
+<text x="400" y="365" fill="#c9d1d9" font-size="14">common robot frame</text>
+
+<path d="M495 348 H550" stroke="#8b949e" stroke-width="3"/><polygon points="550,348 538,341 538,355" fill="#8b949e"/>
+
+<rect x="550" y="302" width="190" height="92" rx="14" fill="#21262d" stroke="#3fb950" stroke-width="2"/>
+<text x="645" y="337" fill="#3fb950" font-size="18" font-weight="700">PointCloud Fusion</text>
+<text x="645" y="365" fill="#c9d1d9" font-size="14">/merged_cloud · ~20 Hz</text>
+
+<path d="M740 348 H795" stroke="#8b949e" stroke-width="3"/><polygon points="795,348 783,341 783,355" fill="#8b949e"/>
+
+<rect x="795" y="302" width="190" height="92" rx="14" fill="#21262d" stroke="#d29922" stroke-width="2"/>
+<text x="890" y="337" fill="#d29922" font-size="18" font-weight="700">DBSCAN</text>
+<text x="890" y="365" fill="#c9d1d9" font-size="14">obstacle clustering</text>
+
+<path d="M985 348 H1040" stroke="#8b949e" stroke-width="3"/><polygon points="1040,348 1028,341 1028,355" fill="#8b949e"/>
+
+<rect x="1040" y="302" width="276" height="92" rx="14" fill="#21262d" stroke="#f85149" stroke-width="2"/>
+<text x="1178" y="337" fill="#f85149" font-size="18" font-weight="700">STVL + Safety Layer</text>
+<text x="1178" y="365" fill="#c9d1d9" font-size="14">costmap + nearest obstacle</text>
+</g>
+
+<text x="60" y="454" fill="#f0f6fc" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">Deployment Evidence</text>
+
+<g font-family="Arial, Helvetica, sans-serif">
+<rect x="60" y="478" width="260" height="76" rx="12" fill="#0d1117" stroke="#30363d"/>
+<text x="82" y="508" fill="#3fb950" font-size="18" font-weight="700">6 / 6 LiDARs</text>
+<text x="82" y="534" fill="#8b949e" font-size="14">fused on physical hardware</text>
+
+<rect x="340" y="478" width="260" height="76" rx="12" fill="#0d1117" stroke="#30363d"/>
+<text x="362" y="508" fill="#58a6ff" font-size="18" font-weight="700">~20 Hz</text>
+<text x="362" y="534" fill="#8b949e" font-size="14">deployed fusion publish rate</text>
+
+<rect x="620" y="478" width="300" height="76" rx="12" fill="#0d1117" stroke="#30363d"/>
+<text x="642" y="508" fill="#d29922" font-size="18" font-weight="700">~2,050–2,150 points</text>
+<text x="642" y="534" fill="#8b949e" font-size="14">per merged-cloud message</text>
+
+<rect x="940" y="478" width="376" height="76" rx="12" fill="#0d1117" stroke="#30363d"/>
+<text x="962" y="508" fill="#a371f7" font-size="18" font-weight="700">ROS2 Humble deployment</text>
+<text x="962" y="534" fill="#8b949e" font-size="14">validated on industrial AGV hardware</text>
+</g>
+</svg>

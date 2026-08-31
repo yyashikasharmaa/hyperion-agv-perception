@@ -1,8 +1,10 @@
-# hyperion-agv-perception
-Multi-LiDAR perception and safety system for an autonomous industrial AGV using ROS2, TF2, DBSCAN and Nav2.
 # HYPERION — Multi-LiDAR Perception & Safety System for an Autonomous AGV
 
 > Six-LiDAR sensor fusion, DBSCAN obstacle clustering, and a costmap-integrated safety layer — designed, built, and deployed on a physical industrial AGV.
+
+## Visual Overview
+
+![HYPERION Overview](docs/screenshots/hyperion_overview.png)
 
 ## Overview
 
@@ -11,6 +13,18 @@ Industrial pallet trucks (BOPTs) use multiple LiDAR sensors because no single se
 **HYPERION** fuses six independently mounted D500 (STL-19P DTOF) LiDAR sensors into one spatially consistent representation. The resulting point cloud supports real-time obstacle detection, safety-zone classification, nearest-obstacle detection, and integration with the vehicle's Nav2 navigation stack.
 
 The project progressed from a two-sensor development setup to deployment and validation using all six LiDAR sensors on physical industrial hardware.
+
+## Deployment & Test Evidence
+
+| Fused Point Cloud | DBSCAN Clustering | STVL Costmap |
+|---|---|---|
+| ![Fused Point Cloud](docs/screenshots/rviz_fused_cloud.png) | ![DBSCAN Clustering](docs/screenshots/rviz_dbscan_clusters.png) | ![STVL Costmap](docs/screenshots/stvl_costmap.png) |
+
+| Nearest Obstacle Detection | Physical AGV Deployment |
+|---|---|
+| ![Nearest Obstacle](docs/screenshots/nearest_obstacle.png) | ![Physical Deployment](docs/screenshots/deployment_bopt.png) |
+
+These visuals document the progression from fused six-LiDAR perception to clustered obstacle output, costmap integration, nearest-obstacle computation, and deployment on physical industrial hardware.
 
 ## System Architecture
 
@@ -449,18 +463,7 @@ The main engineering value of the project was not simply producing a merged poin
 
 ## Screenshots & Demo
 
-Recommended repository visuals:
-
-1. Individual LiDAR scan in RViz
-2. Two-sensor fused point cloud
-3. Six-sensor fused point cloud
-4. DBSCAN obstacle-cluster visualization
-5. Safety-zone visualization
-6. STVL/local costmap
-7. Nearest-obstacle visualization
-8. Nav2 + perception visualization
-
-Screenshots will be stored under:
+The screenshots above provide the main deployment evidence. Additional sanitized visuals can be added under:
 
 ```text
 docs/screenshots/

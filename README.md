@@ -4,7 +4,7 @@
 
 ## Visual Overview
 
-![HYPERION Overview](docs/screenshots/hyperion_overview.png)
+![HYPERION Overview](docs/screenshots/hyperion_overview.svg)
 
 ## Overview
 
@@ -16,15 +16,7 @@ The project progressed from a two-sensor development setup to deployment and val
 
 ## Deployment & Test Evidence
 
-| Fused Point Cloud | DBSCAN Clustering | STVL Costmap |
-|---|---|---|
-| ![Fused Point Cloud](docs/screenshots/rviz_fused_cloud.png) | ![DBSCAN Clustering](docs/screenshots/rviz_dbscan_clusters.png) | ![STVL Costmap](docs/screenshots/stvl_costmap.png) |
-
-| Nearest Obstacle Detection | Physical AGV Deployment |
-|---|---|
-| ![Nearest Obstacle](docs/screenshots/nearest_obstacle.png) | ![Physical Deployment](docs/screenshots/deployment_bopt.png) |
-
-These visuals document the progression from fused six-LiDAR perception to clustered obstacle output, costmap integration, nearest-obstacle computation, and deployment on physical industrial hardware.
+The project report documents RViz-based point-cloud fusion and DBSCAN validation, Nav2/STVL integration, nearest-obstacle visualization, and six-LiDAR physical deployment. Real screenshots will be added here only from sanitized report/test captures; no generated mockups are used as deployment evidence.
 
 ## System Architecture
 
@@ -463,13 +455,21 @@ The main engineering value of the project was not simply producing a merged poin
 
 ## Screenshots & Demo
 
-The screenshots above provide the main deployment evidence. Additional sanitized visuals can be added under:
+Real deployment/test screenshots will be stored under:
 
 ```text
 docs/screenshots/
 ```
 
-> Any deployment screenshots included publicly should have internal IP addresses, hostnames, usernames, credentials, and company-sensitive information removed.
+Planned evidence set:
+
+- `rviz_fused_cloud.png` — six-LiDAR fused point cloud in RViz
+- `rviz_dbscan_clusters.png` — DBSCAN obstacle-cluster visualization
+- `stvl_costmap.png` — STVL/local costmap validation
+- `nearest_obstacle.png` — nearest-obstacle visualization
+- `deployment_bopt.png` — physical AGV deployment
+
+> Only sanitized screenshots from the real project/report should be used here. Internal IP addresses, hostnames, usernames, credentials, and company-sensitive information must be removed before publication.
 
 ## Dependencies
 

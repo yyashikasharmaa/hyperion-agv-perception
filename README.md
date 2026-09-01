@@ -2,32 +2,6 @@
 
 > Six-LiDAR sensor fusion, DBSCAN obstacle clustering, and a costmap-integrated safety layer — designed, built, and deployed on a physical industrial AGV.
 
-## Visual Overview
-
-![HYPERION system overview](docs/screenshots/hyperion_overview.svg)
-
-## Deployment & Test Evidence
-
-The images below are sanitized captures from the real development and BOPT deployment sessions documented in the project report — not generated mockups.
-
-| Six-LiDAR fused cloud | Safety-zone visualization |
-|---|---|
-| ![Six-LiDAR fused cloud in RViz](docs/screenshots/rviz_fused_cloud.jpg) | ![Safety-zone visualization](docs/screenshots/safety_zone_visualization.svg) |
-| **Six-sensor fusion:** merged LiDAR data rendered in RViz. | **Safety layer:** SLOW/STOP proximity regions around the robot footprint. |
-
-| STVL / Nav2 integration | Nearest-obstacle view |
-|---|---|
-| ![STVL and Nav2 integration](docs/screenshots/stvl_nav2_integration.svg) | ![Nearest obstacle view](docs/screenshots/nearest_obstacle.jpg) |
-| **Navigation integration:** perception layers running with the Nav2 RViz configuration. | **Live deployment:** real footprint, six-LiDAR obstacle ring, and nearest-obstacle marker. |
-
-### Physical Deployment
-
-![Physical BOPT deployment test](docs/screenshots/deployment_bopt.jpg)
-
-Physical validation included placing a chair in front of the BOPT and checking the reported obstacle coordinates against the real scene.
-
-The deployed fusion node was observed publishing from **6/6 LiDARs at ~20 Hz**, with roughly **2,050–2,150 points per merged-cloud message**.
-
 ## Overview
 
 Industrial pallet trucks (BOPTs) use multiple LiDAR sensors because no single sensor can provide complete surrounding coverage due to mounting position, blind spots, and field-of-view limitations.
@@ -35,6 +9,48 @@ Industrial pallet trucks (BOPTs) use multiple LiDAR sensors because no single se
 **HYPERION** fuses six independently mounted D500 (STL-19P DTOF) LiDAR sensors into one spatially consistent representation. The resulting point cloud supports real-time obstacle detection, safety-zone classification, nearest-obstacle detection, and integration with the vehicle's Nav2 navigation stack.
 
 The project progressed from a two-sensor development setup to deployment and validation using all six LiDAR sensors on physical industrial hardware.
+
+## Visual Overview
+
+![HYPERION system overview](docs/screenshots/hyperion_overview.svg)
+
+## Real Deployment Evidence
+
+The following are sanitized captures from the actual development and BOPT deployment sessions documented in the project report. They are shown full-width so the perception output remains readable.
+
+### Six-LiDAR Fusion — Live BOPT
+
+<p align="center">
+  <img src="docs/screenshots/rviz_fused_cloud.jpg" alt="Six-LiDAR fused point cloud in RViz" width="850">
+</p>
+
+The fused cloud shows environmental returns from the deployed six-sensor configuration around the vehicle footprint.
+
+### Safety-Zone Validation
+
+<p align="center">
+  <img src="docs/screenshots/safety_zone_visualization.svg" alt="Safety-zone visualization in RViz" width="850">
+</p>
+
+An early safety-layer test visualizing proximity regions around the robot footprint.
+
+### Nav2 / STVL Integration
+
+<p align="center">
+  <img src="docs/screenshots/stvl_nav2_integration.svg" alt="Nav2 and STVL integration in RViz" width="850">
+</p>
+
+The perception output is visualized alongside the robot's Nav2 configuration, including TF, PointCloud2, Polygon, Map, and MarkerArray layers.
+
+### Physical BOPT Test
+
+<p align="center">
+  <img src="docs/screenshots/deployment_bopt.jpg" alt="Physical BOPT deployment test" width="760">
+</p>
+
+Physical validation included placing a chair in front of the BOPT and comparing the reported obstacle coordinates with the real scene.
+
+**Measured deployment result:** **6/6 LiDARs** fused at approximately **20 Hz**, with roughly **2,050–2,150 points per merged-cloud message**.
 
 ## System Architecture
 
@@ -470,18 +486,6 @@ Six-LiDAR Physical Deployment
 ```
 
 The main engineering value of the project was not simply producing a merged point cloud, but developing and validating the complete path from heterogeneous sensor inputs to safety-relevant spatial information on physical hardware.
-
-## Screenshots & Demo
-
-The evidence above was extracted from the real project report and sanitized for public use. It covers:
-
-- full six-LiDAR fusion in RViz
-- early safety-zone/proximity visualization
-- STVL/Nav2 integration
-- nearest-obstacle visualization
-- physical BOPT obstacle-coordinate validation
-
-> Internal IP addresses, hostnames, usernames, credentials, terminal prompts, and company-sensitive deployment details are intentionally excluded from the public evidence set.
 
 ## Dependencies
 

@@ -1,0 +1,22 @@
+# ROS2 / colcon
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pkl
+*.pickle
+.venv/
+venv/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Local deployment data
+*.bag
+*.db3
+*.mcap

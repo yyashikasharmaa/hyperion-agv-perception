@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>costmap_pkg</name>
+  <version>1.0.0</version>
+  <description>Nav2 STVL costmap configuration for HYPERION.</description>
+  <maintainer email="noreply@users.noreply.github.com">Yashika Sharma</maintainer>
+  <license>Proprietary</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <exec_depend>nav2_costmap_2d</exec_depend>
+  <exec_depend>nav2_lifecycle_manager</exec_depend>
+  <exec_depend>spatio_temporal_voxel_layer</exec_depend>
+  <exec_depend>ros2launch</exec_depend>
+  <export><build_type>ament_cmake</build_type></export>
+</package>

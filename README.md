@@ -16,7 +16,13 @@ The project progressed from a two-sensor development setup to deployment and val
 
 ## Real Deployment Evidence
 
-The following are sanitized captures from the actual development and BOPT deployment sessions documented in the project report. They are shown full-width so the perception output remains readable.
+The following are sanitized captures from the actual development and BOPT deployment sessions documented in the project report.
+
+### Architecture — Project Report
+
+<p align="center">
+  <img src="docs/screenshots/architecture_diagram.png" alt="HYPERION system architecture diagram" width="850">
+</p>
 
 ### Six-LiDAR Fusion — Live BOPT
 
@@ -29,18 +35,26 @@ The fused cloud shows environmental returns from the deployed six-sensor configu
 ### Safety-Zone Validation
 
 <p align="center">
-  <img src="docs/screenshots/safety_zone_visualization.svg" alt="Safety-zone visualization in RViz" width="850">
+  <img src="docs/screenshots/safety_zone_visualization.jpg" alt="Safety-zone visualization in RViz" width="850">
 </p>
 
-An early safety-layer test visualizing proximity regions around the robot footprint.
+An early safety-layer test visualizing SAFE/SLOW/STOP proximity regions around the robot footprint.
 
 ### Nav2 / STVL Integration
 
 <p align="center">
-  <img src="docs/screenshots/stvl_nav2_integration.svg" alt="Nav2 and STVL integration in RViz" width="850">
+  <img src="docs/screenshots/stvl_nav2_integration.jpg" alt="Nav2 and STVL integration in RViz" width="850">
 </p>
 
-The perception output is visualized alongside the robot's Nav2 configuration, including TF, PointCloud2, Polygon, Map, and MarkerArray layers.
+The perception output is visualized alongside the robot's Nav2 configuration, including TF, LaserScan, Map, AMCL, PointCloud2, Polygon, and MarkerArray layers.
+
+### Confirmed Fusion Rate — Deployment Log
+
+<p align="center">
+  <img src="docs/screenshots/terminal_fusion_log.jpg" alt="Sanitized terminal log confirming six-LiDAR fusion" width="850">
+</p>
+
+Sanitized live deployment output confirming the fusion node publishing from all six configured LiDARs.
 
 ### Physical BOPT Test
 
@@ -135,27 +149,17 @@ hyperion-agv-perception/
 ├── .gitignore
 ├── requirements.txt
 ├── docs/
-│   ├── architecture.png
 │   └── screenshots/
+│       ├── architecture_diagram.png
+│       ├── rviz_fused_cloud.jpg
+│       ├── safety_zone_visualization.jpg
+│       ├── stvl_nav2_integration.jpg
+│       ├── terminal_fusion_log.jpg
+│       └── deployment_bopt.jpg
 └── src/
     ├── agv_safety/
-    │   ├── agv_safety/
-    │   │   ├── obstacle_detector.py
-    │   │   └── voxel_distance_node.py
-    │   └── launch/
-    │
     ├── apds_lidar_clustering/
-    │   ├── apds_lidar_clustering/
-    │   │   ├── pointcloud_fusion.py
-    │   │   ├── scan_to_cloud.py
-    │   │   └── lidar_dummy.py
-    │   └── launch/
-    │
     └── costmap_pkg/
-        ├── config/
-        │   └── costmap.yaml
-        └── launch/
-            └── stvl_costmap_launch.py
 ```
 
 > The third-party `ldlidar_stl_ros2` LiDAR driver is intentionally not included in this repository. It is an external dependency and is not presented as original project code.

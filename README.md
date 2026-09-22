@@ -1,6 +1,6 @@
 # HYPERION — Multi-LiDAR Perception & Safety for an Autonomous AGV
 
-> ROS2 perception pipeline for six-LiDAR fusion, DBSCAN obstacle extraction, STVL/Nav2 integration, and nearest-obstacle safety logic on an industrial BOPT/AGV.
+> ROS2 perception pipeline for six-LiDAR fusion, DBSCAN obstacle extraction, STVL/Nav2 integration, and nearest-obstacle safety logic on an industrial autonomous AGV.
 
 ## Overview
 
@@ -34,7 +34,7 @@ safety zones    obstacle + safety state
 
 ## Real Deployment Evidence
 
-These are sanitized captures from the actual development and BOPT deployment sessions documented in the project report.
+These are sanitized captures from the actual development and industrial AGV deployment sessions documented in the project report.
 
 ### Six-LiDAR Fusion — RViz
 
@@ -58,12 +58,6 @@ These are sanitized captures from the actual development and BOPT deployment ses
 
 <p align="center">
   <img src="docs/screenshots/terminal_fusion_log.jpg" alt="Sanitized deployment fusion log" width="850">
-</p>
-
-### Physical BOPT Validation
-
-<p align="center">
-  <img src="docs/screenshots/deployment_bopt.jpg" alt="Physical BOPT deployment test" width="760">
 </p>
 
 **Observed deployment result:** all **6 LiDARs** contributed to the fused stream at approximately **20 Hz**, with roughly **2,050–2,150 points per merged-cloud message** during the documented run.
@@ -151,7 +145,6 @@ hyperion-agv-perception/
 ├── docs/
 │   └── screenshots/
 │       ├── architecture_diagram.png
-│       ├── deployment_bopt.jpg
 │       ├── rviz_fused_cloud.jpg
 │       ├── safety_zone_visualization.jpg
 │       ├── stvl_nav2_integration.jpg
@@ -283,7 +276,7 @@ These values are implementation/deployment observations, **not benchmarked perce
 
 ## Security / Publication Notes
 
-The public repository intentionally excludes credentials, internal IP addresses, deployment usernames and hostnames, company-specific local paths, build logs, recorded binary test data, and third-party LiDAR-driver source.
+The public repository intentionally excludes credentials, internal IP addresses, deployment usernames and hostnames, company-specific local paths, machine-identifying deployment photos, build logs, recorded binary test data, and third-party LiDAR-driver source.
 
 ## Project Scope
 
